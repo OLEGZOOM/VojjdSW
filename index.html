@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вождь ПО — Отечественное программное обеспечение</title>
+    <!-- SEO мета-теги -->
+    <meta name="description" content="Официальный дистрибьютор Astra Linux, Альт СП, Мой Офис, Р7-Офис. Лицензирование, внедрение, поддержка. Переход на российское ПО.">
+    <meta name="keywords" content="Astra Linux, Альт СП, Мой Офис, Р7-Офис, отечественное ПО, купить лицензию, внедрение, обучение">
+    <meta name="author" content="Вождь ПО">
+    <!-- Yandex Verification (пример) -->
+    <meta name="yandex-verification" content="пример_для_реальных_данных">
+    <!-- Google Verification (пример) -->
+    <meta name="google-site-verification" content="пример_для_реальных_данных">
+    
+    <!-- Микроразметка Schema.org для организации -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Вождь ПО",
+        "url": "https://vozhdpo.ru",
+        "logo": "https://vozhdpo.ru/images/logo.png",
+        "description": "Распространение отечественного программного обеспечения: Astra Linux, Альт СП, Мой Офис, Р7-Офис.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Москва, Россия",
+            "streetAddress": "ул. Примерная, д. 1"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+7-495-123-45-67",
+            "contactType": "customer service",
+            "availableLanguage": "Russian"
+        }
+    }
+    </script>
+
+    <!-- Подключение шрифтов Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6 (бесплатный) для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Базовые сбросы и переменные */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #ffffff;
+        }
+
+        :root {
+            --dark-blue: #0f172a;
+            --accent: #f97316;
+            --accent-light: #ffb089;
+            --white: #ffffff;
+            --light-bg: #f8fafc;
+            --gray: #64748b;
+            --border-color: #e2e8f0;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+        }
+
+        /* Утилиты */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--white);
+            box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #ea580c;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--dark-blue);
+            border-color: var(--dark-blue);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            border-color: var(--dark-blue);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--dark-blue);
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin-bottom: 3rem;
+        }
+
+        /* Хедер с мобильным меню */
+        .header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--dark-blue);
+            text-decoration: none;
+        }
+        .logo span {
+            color: var(--accent);
+        }
+
+        /* Десктопное меню */
+        .nav-menu {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            font-weight: 500;
+            color: var(--dark-blue);
+            transition: color 0.2s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent);
+        }
+
+        .header-contacts {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-contacts .phone {
+            font-weight: 700;
+            color: var(--dark-blue);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--dark-blue);
+            cursor: pointer;
+            z-index: 110;
+        }
+
+        /* Мобильное меню (выезжающее) */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 400px;
+            height: 100vh;
+            background-color: var(--white);
+            box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+            padding: 100px 30px 30px;
+            transition: right 0.3s ease;
+            z-index: 105;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu a {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--dark-blue);
+            text-decoration: none;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-menu .phone {
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-top: 20px;
+        }
+
+        .mobile-menu .btn {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 104;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, #1e293b 100%);
+            color: var(--white);
+            padding: 80px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Блок преимуществ */
+        .features {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 32px 24px;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: var(--dark-blue);
+        }
+
+        .feature-card p {
+            color: var(--gray);
+        }
+
+        /* Каталог продуктов */
+        .products {
+            padding: 80px 0;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            padding: 32px 24px;
+            transition: all 0.3s;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+            border-color: var(--accent);
+        }
+
+        .product-logo {
+            height: 60px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .product-logo img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+        /* временные заглушки для логотипов */
+        .product-logo .placeholder-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--dark-blue);
+            background: #e2e8f0;
+            padding: 8px 16px;
+            border-radius: 12px;
+        }
+
+        .product-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            color: var(--dark-blue);
+        }
+
+        .product-desc {
+            color: var(--gray);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .product-link {
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .product-link i {
+            transition: transform 0.2s;
+        }
+        .product-link:hover i {
+            transform: translateX(5px);
+        }
+
+        .btn-small {
+            padding: 8px 16px;
+            background-color: var(--dark-blue);
+            color: white;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .btn-small:hover {
+            background-color: var(--accent);
+        }
+
+        /* Партнёры */
+        .partners {
+            padding: 60px 0;
+            background-color: var(--light-bg);
+            text-align: center;
+        }
+
+        .partners-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .partner-logo {
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.2s;
+            max-width: 150px;
+        }
+
+        .partner-logo:hover {
+            filter: none;
+            opacity: 1;
+        }
+
+        .partner-logo img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Услуги */
+        .services {
+            padding: 80px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .service-item {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            text-align: left;
+            border-left: 5px solid var(--accent);
+        }
+
+        .service-item i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .service-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .service-item p {
+            color: var(--gray);
+        }
+
+        /* Отзывы */
+        .testimonials {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--dark-blue) 0%, #1e293b 100%);
+            color: var(--white);
+        }
+
+        .testimonials .section-title,
+        .testimonials .section-subtitle {
+            color: var(--white);
+        }
+        .testimonials .section-subtitle {
+            opacity: 0.8;
+        }
+
+        .testimonials-slider {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 30px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            font-weight: 700;
+        }
+        .author-info p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Блог/Новости */
+        .blog {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-image {
+            height: 200px;
+            background-color: var(--border-color);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-date {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+
+        .blog-title {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--dark-blue);
+        }
+
+        .blog-excerpt {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Форма обратной связи */
+        .contact {
+            padding: 80px 0;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 32px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border 0.2s, box-shadow 0.2s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(249,115,22,0.1);
+        }
+
+        textarea {
+            border-radius: 20px;
+            resize: vertical;
+        }
+
+        .form-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .form-btn:hover {
+            background-color: #ea580c;
+        }
+
+        /* Футер */
+        .footer {
+            background-color: var(--dark-blue);
+            color: #cbd5e1;
+            padding: 60px 0 30px;
+        }
+
+        .footer .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-col:first-child {
+            max-width: 300px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+        }
+        .footer-logo span {
+            color: var(--accent);
+        }
+
+        .footer-about {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.3rem;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+
+        .social-links a:hover {
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid #334155;
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 992px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .footer .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu, .header-contacts {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .mobile-menu {
+                display: flex;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .products-grid, .features-grid, .services-grid, .testimonials-slider, .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer .container {
+                grid-template-columns: 1fr;
+            }
+            /* Уменьшаем отступы секций для мобильных */
+            .hero {
+                padding: 60px 0;
+            }
+            .features, .products, .services, .testimonials, .blog, .contact {
+                padding: 60px 0;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+            .btn {
+                padding: 10px 24px;
+                font-size: 14px;
+            }
+            .product-card {
+                padding: 24px 16px;
+            }
+            .product-logo .placeholder-logo {
+                font-size: 1.4rem;
+                padding: 6px 12px;
+            }
+            .contact-form {
+                padding: 30px 20px;
+            }
+            .footer-col:first-child {
+                max-width: 100%;
+            }
+        }
+
+        /* Очень маленькие экраны (до 480px) */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .hero-buttons .btn {
+                width: 100%;
+                text-align: center;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+            .features-grid, .products-grid, .services-grid, .testimonials-slider, .blog-grid {
+                gap: 20px;
+            }
+            .feature-card {
+                padding: 24px 16px;
+            }
+            .feature-icon {
+                font-size: 2.5rem;
+            }
+            .feature-card h3 {
+                font-size: 1.3rem;
+            }
+            .product-footer {
+                flex-direction: column;
+                gap: 15px;
+                align-items: stretch;
+            }
+            .product-link, .btn-small {
+                text-align: center;
+            }
+            .btn-small {
+                width: 100%;
+            }
+            .service-item {
+                padding: 20px;
+            }
+            .testimonial-card {
+                padding: 20px;
+            }
+            .blog-content {
+                padding: 20px;
+            }
+            .blog-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Хедер -->
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">Вождь<span>ПО</span></a>
+            <nav class="nav-menu">
+                <a href="#">Главная</a>
+                <a href="#">Продукты</a>
+                <a href="#">Услуги</a>
+                <a href="#">О компании</a>
+                <a href="#">Блог</a>
+                <a href="#">Контакты</a>
+            </nav>
+            <div class="header-contacts">
+                <span class="phone">+7 (495) 123-45-67</span>
+                <a href="#" class="btn btn-primary">Заказать звонок</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <!-- Мобильное меню (выезжающее) -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#">Главная</a>
+        <a href="#">Продукты</a>
+        <a href="#">Услуги</a>
+        <a href="#">О компании</a>
+        <a href="#">Блог</a>
+        <a href="#">Контакты</a>
+        <div class="phone">+7 (495) 123-45-67</div>
+        <a href="#" class="btn btn-primary">Заказать звонок</a>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hero блок -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Отечественное ПО для бизнеса и государства</h1>
+                <p>Официальный дистрибьютор Astra Linux, Альт СП, Мой Офис, Р7-Офис. Лицензирование, внедрение, поддержка.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">Перейти в каталог</a>
+                    <a href="#" class="btn btn-secondary" style="background: transparent; border-color: white; color: white;">Получить консультацию</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://placehold.co/600x400/1e293b/white?text=Наше+ПО+в+работе" alt="Демонстрация ПО">
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Почему выбирают нас</h2>
+            <p class="section-subtitle">Работаем с 2010 года, официальные партнёры вендоров, помогаем перейти с иностранного ПО</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Официальные партнёры</h3>
+                    <p>Все лицензии подлинные, прямая поддержка от производителей.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-arrows-spin"></i></div>
+                    <h3>Помощь в переходе</h3>
+                    <p>Миграция с иностранного ПО, аудит ИТ-инфраструктуры.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                    <h3>Техподдержка 24/7</h3>
+                    <p>Круглосуточная помощь для корпоративных клиентов.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+                    <h3>Гарантия совместимости</h3>
+                    <p>Тестируем решения перед внедрением, гарантируем работу.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Каталог продуктов -->
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">Наши ключевые продукты</h2>
+            <p class="section-subtitle">Только сертифицированное отечественное ПО, включённое в реестр Минцифры</p>
+            <div class="products-grid">
+                <!-- Карточка Astra Linux -->
+                <div class="product-card">
+                    <div class="product-logo">
+                        <div class="placeholder-logo">Astra Linux</div>
+                    </div>
+                    <h3>Astra Linux</h3>
+                    <p class="product-desc">Защищённая операционная система для госсектора и корпоративных клиентов. Сертифицирована ФСТЭК.</p>
+                    <div class="product-footer">
+                        <a href="#" class="product-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="btn-small">Запросить КП</a>
+                    </div>
+                </div>
+                <!-- Альт СП -->
+                <div class="product-card">
+                    <div class="product-logo">
+                        <div class="placeholder-logo">Альт СП</div>
+                    </div>
+                    <h3>Альт СП</h3>
+                    <p class="product-desc">Свободная ОС на базе Linux, подходит для серверов и рабочих станций.</p>
+                    <div class="product-footer">
+                        <a href="#" class="product-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="btn-small">Запросить КП</a>
+                    </div>
+                </div>
+                <!-- Мой Офис -->
+                <div class="product-card">
+                    <div class="product-logo">
+                        <div class="placeholder-logo">Мой Офис</div>
+                    </div>
+                    <h3>Мой Офис</h3>
+                    <p class="product-desc">Пакет офисных приложений для работы с документами, электронной почтой и коммуникациями.</p>
+                    <div class="product-footer">
+                        <a href="#" class="product-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="btn-small">Запросить КП</a>
+                    </div>
+                </div>
+                <!-- Р7-Офис -->
+                <div class="product-card">
+                    <div class="product-logo">
+                        <div class="placeholder-logo">Р7-Офис</div>
+                    </div>
+                    <h3>Р7-Офис</h3>
+                    <p class="product-desc">Редакторы документов, таблиц и презентаций с поддержкой форматов Microsoft Office.</p>
+                    <div class="product-footer">
+                        <a href="#" class="product-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="btn-small">Запросить КП</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Партнёры / Нам доверяют -->
+    <section class="partners">
+        <div class="container">
+            <h2 class="section-title">Нам доверяют</h2>
+            <div class="partners-logos">
+                <div class="partner-logo"><img src="https://placehold.co/150x60/e2e8f0/1e293b?text=Росатом" alt="Росатом"></div>
+                <div class="partner-logo"><img src="https://placehold.co/150x60/e2e8f0/1e293b?text=Газпром" alt="Газпром"></div>
+                <div class="partner-logo"><img src="https://placehold.co/150x60/e2e8f0/1e293b?text=Сбер" alt="Сбер"></div>
+                <div class="partner-logo"><img src="https://placehold.co/150x60/e2e8f0/1e293b?text=Минцифры" alt="Минцифры"></div>
+                <div class="partner-logo"><img src="https://placehold.co/150x60/e2e8f0/1e293b?text=РЖД" alt="РЖД"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Услуги -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Наши услуги</h2>
+            <p class="section-subtitle">Полный цикл работ: от аудита до обучения сотрудников</p>
+            <div class="services-grid">
+                <div class="service-item">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Внедрение</h3>
+                    <p>Установка и настройка ПО под задачи вашей организации.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-people-arrows"></i>
+                    <h3>Миграция</h3>
+                    <p>Перенос данных с иностранных ОС и офисных пакетов.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-chalkboard-user"></i>
+                    <h3>Обучение</h3>
+                    <p>Курсы для пользователей и администраторов.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-life-ring"></i>
+                    <h3>Абонентское обслуживание</h3>
+                    <p>Постоянная техподдержка и обновления.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Отзывы клиентов</h2>
+            <p class="section-subtitle">Более 500 успешных проектов по всей России</p>
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">«Перешли на Astra Linux с помощью Вождь ПО. Всё прошло гладко, сотрудники обучены, техподдержка оперативно отвечает.»</div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ИП</div>
+                        <div class="author-info">
+                            <h4>Иван Петров</h4>
+                            <p>ИТ-директор, ГК «Ростех»</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">«Закупили лицензии Мой Офис для всей компании. Процесс оформления быстрый, менеджеры всё подробно объяснили.»</div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ЕС</div>
+                        <div class="author-info">
+                            <h4>Елена Смирнова</h4>
+                            <p>Руководитель административного отдела</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">«Отличный подход к миграции с Windows на Альт СП. Всё работает стабильно, рекомендации профессионалов.»</div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">АК</div>
+                        <div class="author-info">
+                            <h4>Алексей Козлов</h4>
+                            <p>Системный администратор</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блог/Новости -->
+    <section class="blog">
+        <div class="container">
+            <h2 class="section-title">Последние новости и статьи</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://placehold.co/400x200/0f172a/white?text=Astra+Linux+7.7')"></div>
+                    <div class="blog-content">
+                        <div class="blog-date">15 марта 2025</div>
+                        <h3 class="blog-title">Выход Astra Linux 7.7: что нового?</h3>
+                        <p class="blog-excerpt">Улучшена совместимость с оборудованием, обновлено ядро и добавлены новые драйверы.</p>
+                        <a href="#" class="read-more">Читать далее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://placehold.co/400x200/0f172a/white?text=Импортозамещение')"></div>
+                    <div class="blog-content">
+                        <div class="blog-date">2 марта 2025</div>
+                        <h3 class="blog-title">Как перейти на отечественное ПО без простоев</h3>
+                        <p class="blog-excerpt">Пошаговая инструкция по миграции для госучреждений и коммерческих компаний.</p>
+                        <a href="#" class="read-more">Читать далее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image" style="background-image: url('https://placehold.co/400x200/0f172a/white?text=Р7-Офис')"></div>
+                    <div class="blog-content">
+                        <div class="blog-date">20 февраля 2025</div>
+                        <h3 class="blog-title">Р7-Офис: новые функции совместной работы</h3>
+                        <p class="blog-excerpt">Появилось комментирование, сравнение документов и улучшенный импорт из .docx.</p>
+                        <a href="#" class="read-more">Читать далее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма обратной связи с интеграцией Telegram -->
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Получите консультацию</h2>
+            <p class="section-subtitle" style="text-align: center;">Оставьте заявку, и наш специалист свяжется с вами в ближайшее время</p>
+            <div class="contact-form">
+                <form id="tgForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" placeholder="Телефон" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="4" id="comment" placeholder="Ваш вопрос или комментарий"></textarea>
+                    </div>
+                    <button type="submit" class="form-btn" id="submitBtn">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-col">
+                <div class="footer-logo">Вождь<span>ПО</span></div>
+                <p class="footer-about">Официальный дистрибьютор отечественного программного обеспечения. Работаем по всей России.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Продукты</h4>
+                <ul>
+                    <li><a href="#">Astra Linux</a></li>
+                    <li><a href="#">Альт СП</a></li>
+                    <li><a href="#">Мой Офис</a></li>
+                    <li><a href="#">Р7-Офис</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Компания</h4>
+                <ul>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Лицензии</a></li>
+                    <li><a href="#">Партнёры</a></li>
+                    <li><a href="#">Вакансии</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +7 (495) 123-45-67</li>
+                    <li><i class="fas fa-envelope"></i> info@vozhdpo.ru</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Москва, ул. Примерная, д. 1</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 Вождь ПО. Все права защищены. <a href="#" style="color: #cbd5e1;">Политика конфиденциальности</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипт для мобильного меню -->
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const overlay = document.getElementById('overlay');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+    </script>
+
+    <!-- Скрипт отправки формы в Telegram -->
+    <script>
+        const tgForm = document.getElementById('tgForm');
+        const submitBtn = document.getElementById('submitBtn');
+
+        const BOT_TOKEN = '{{ secrets.BOT_TOKEN }}';
+const CHAT_ID = '{{ secrets.CHAT_ID }}';    
+
+        tgForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Блокируем кнопку
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Отправка...';
+            
+            // Собираем данные
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const comment = document.getElementById('comment').value.trim();
+            
+            // Валидация (обязательные поля)
+            if (!name || !phone) {
+                alert('Пожалуйста, заполните имя и телефон');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Отправить заявку';
+                return;
+            }
+            
+            // Формируем сообщение (можно использовать HTML-теги)
+            let message = `<b>📩 Новая заявка с сайта!</b>\n\n`;
+            message += `<b>👤 Имя:</b> ${name}\n`;
+            message += `<b>📞 Телефон:</b> ${phone}\n`;
+            if (email) message += `<b>📧 Email:</b> ${email}\n`;
+            if (comment) message += `<b>💬 Комментарий:</b> ${comment}\n`;
+            message += `\n⏱ ${new Date().toLocaleString('ru-RU')}`;
+            
+            // Отправляем в Telegram
+            fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    chat_id: CHAT_ID,
+                    text: message,
+                    parse_mode: 'HTML'
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    alert('✅ Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.');
+                    tgForm.reset();
+                } else {
+                    alert('❌ Ошибка при отправке. Пожалуйста, попробуйте позже или позвоните нам.');
+                    console.error('Telegram API error:', data);
+                }
+            })
+            .catch(error => {
+                alert('❌ Ошибка соединения. Проверьте интернет и попробуйте снова.');
+                console.error('Fetch error:', error);
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Отправить заявку';
+            });
+        });
+    </script>
+</body>
+</html>
